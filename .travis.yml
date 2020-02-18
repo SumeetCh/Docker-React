@@ -6,4 +6,5 @@ before_install:
     - docker build -t sumeetchawladocker/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run sumeetchawladocker/docker-react npm run test -- --coverage
+    - docker run -e CI=true sumeetchawladocker/docker-react npm run test -- --coverage
+    
